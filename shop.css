@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Playpen+Sans+Thai:wght@100..800&family=Press+Start+2P&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  background: #000a46;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: rgb(80, 80, 206); 
+  border-radius: 10px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background: #fcfcfcde;
+    color: #fff;
+    font-family: "Noto Sans Thai", serif;
+}
+
+.pizza {
+    color: red;
+}
+
+.pizza {
+    color: green;
+}
+
+#pizza {
+    color: rgb(149, 149, 255);
+}
+
+.box .location {
+    text-decoration: underline;
+}
+
+h1 {
+    text-align: center;
+    background: #eee;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: "Press Start 2P", system-ui;
+    margin-top: 20px;
+    animation: changcolorH1 10s infinite ease-in-out;
+}
+
+.lorem {
+    text-align: center;
+    font-family: "Noto Sans Thai", sans-serif;
+    color: #fff;
+}
+
+.lorem::before {
+    content: "* ";
+    color: blue;
+}
+
+.lorem::after {
+    content: " *";
+    color: blue;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 105vh;
+    background: linear-gradient(180deg, #147e55, rgb(19, 19, 46));
+    box-shadow: 0 0 10px 10px #555555;
+
+    & img {
+        border-radius: 100%;
+        border: 2px dashed blue;
+        animation: imgRound 5s infinite ease-in-out;
+    }
+
+    & a {
+        text-decoration: none;
+        padding: 10px;
+        background: rgb(40, 105, 40);
+        color: #fff;
+        margin-top: 10px;
+        font-family: "Noto Sans Thai", serif;
+        border-radius: 6px;
+        font-weight: 500;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(19, 19, 46);
+    box-shadow: 0 0 10px 10px rgb(19, 19, 46);
+
+    & h2 {
+        margin-top: 8rem;
+        color: #fff;
+        font-family: "Noto Sans Thai", serif;
+        font-size: 3rem;
+
+    }
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    /* border: 1px solid red; */
+    width: 80%;
+    background: rgb(50, 50, 116);
+    border-radius: 8px;
+    box-shadow: 3px 5px 20px 5px #0e4c9e;
+
+    & .detail {
+        /* border: 1px solid red; */
+        padding: 20px;
+
+        & h3 {
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+
+        & ul {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            & li:nth-child(3) a{
+                color: rgb(113, 231, 113);
+            }
+        }
+
+        &h3 {
+            font-size: 5rem;
+        }
+    }
+
+    & img {
+        border-radius: 6px;
+    }
+}
+
+.line {
+    width: 85%;
+    background: #eeeeee7a;
+    height: 1px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 10px;
+}
+
+.loadding {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    opacity: 1;
+    animation: loadding 4s ease-in-out forwards;
+    animation-delay: 3s;
+    z-index: 999;
+    pointer-events: none;
+    display: none;
+}
+
+.loader {
+    --color-1: #fff;
+    --color-2: #0025FF;
+    --size: 1px;
+
+    width: calc(48 * var(--size));
+    height: calc(48 * var(--size));
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite;
+}
+
+.loader::before,
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: calc(5 * var(--size)) solid var(--color-1);
+    animation: prixClipFix 2s linear infinite;
+}
+
+.loader::after {
+    inset: calc(8 * var(--size));
+    transform: rotate3d(90, 90, 0, 180deg);
+    border-color: var(--color-2);
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    & h4{
+        font-size: 20px;
+    }
+
+    & table, th, td {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+    }
+
+    & table th, td{
+        padding: 10px;
+    }
+
+
+}
+
+/* keyframe 555+ */
+
+@keyframes imgRound {
+    0% {
+        transform: rotate(0);
+        border: 2px dashed blue;
+    }
+
+    50% {
+        border: 6px dashed rgb(0, 82, 14);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loadding {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes changcolorH1 {
+    0% {
+        color: green;
+    }
+
+    50% {
+        color: blue;
+    }
+
+    100% {
+        color: green;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes prixClipFix {
+    0% {
+        clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+    }
+
+    50% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+    }
+
+    75%,
+    100% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+    }
+}
