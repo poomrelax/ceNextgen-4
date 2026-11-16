@@ -1,0 +1,127 @@
+/* =====================================================
+   My Anime List · the CSS is ready. You don't need to edit it.
+
+   Classes you can use:
+     <img class="cover">       the cover picture (sized for you)
+     <td class="title">        bold title
+     <td class="score">        the score cell
+     <td class="status">       the status cell
+     <tr class="watching">     a green bar on the left   (status "watching")
+     <tr class="completed">    a blue bar on the left    (status "completed")
+     <tr class="planned">      a grey bar on the left    (status "planned")
+     <tr class="hidden">       hides a row (bonus: tabs)
+   ===================================================== */
+
+:root {
+  --cream: #fff7e1;
+  --ink: #1d1d1f;
+  --paper: #fffdf6;
+  --yellow: #ffd84d;
+  --red: #e8505b;
+  --green: #3fa34d;
+  --blue: #3b6fe0;
+  --grey: #a39d8b;
+  --muted: #5d5a52;
+  --pixel: "Press Start 2P", "Courier New", monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: system-ui, "Segoe UI", Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1, h2, .kicker, .meter, .tab, th { font-family: var(--pixel); }
+
+.top { max-width: 1240px; margin: 0 auto; padding: 32px 16px 8px; }
+.kicker { margin: 0 0 10px; font-size: 10px; color: var(--red); }
+.top h1 { font-size: 22px; line-height: 1.4; margin: 0 0 10px; }
+.sub { margin: 0; color: var(--muted); }
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 28px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 16px 16px 48px;
+  align-items: start;
+}
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.tab {
+  font-size: 9px;
+  padding: 10px 12px;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  cursor: pointer;
+}
+.tab.active { background: var(--ink); color: var(--yellow); }
+
+.table-wrap { overflow-x: auto; border: 4px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); background: var(--paper); }
+.list-table { width: 100%; border-collapse: collapse; font-size: 16px; }
+.list-table th {
+  font-size: 9px;
+  text-align: left;
+  background: var(--ink);
+  color: var(--yellow);
+  padding: 12px 10px;
+  white-space: nowrap;
+}
+.list-table td { padding: 10px; border-top: 2px solid #e6dfc8; vertical-align: middle; }
+.list-table tbody td:first-child { border-left: 10px solid #d8d2bf; }   /* the status bar */
+.list-table tbody tr:hover { background: #fff3c4; }
+tbody:empty::after {
+  content: "No rows yet… load the JSON and build them!";
+  display: block;
+  padding: 24px;
+  color: var(--muted);
+}
+
+tr.watching td:first-child  { border-left-color: var(--green); }
+tr.completed td:first-child { border-left-color: var(--blue); }
+tr.planned td:first-child   { border-left-color: var(--grey); }
+tr.hidden    { display: none; }
+
+.title { font-weight: 700; }
+.cover {
+  display: block;
+  width: 50px;
+  height: 70px;
+  object-fit: cover;
+  border: 3px solid var(--ink);
+  background: #d8d2bf;   
+  font-size: 10px;         
+}
+.score { font-family: var(--pixel); font-size: 13px; text-align: center; }
+.status { text-transform: capitalize; font-weight: 600; }
+tr.watching .status  { color: var(--green); }
+tr.completed .status { color: var(--blue); }
+tr.planned .status   { color: var(--muted); }
+
+.checker {
+  position: sticky; top: 16px;
+  background: var(--ink);
+  color: #f3eedd;
+  border: 4px solid var(--ink);
+  box-shadow: 6px 6px 0 #8a8576;
+  padding: 18px;
+}
+.checker h2 { font-size: 12px; color: var(--yellow); margin: 0 0 12px; }
+.checker .levelup-title { margin-top: 18px; color: #b9b3a2; font-size: 10px; }
+.meter { font-size: 11px; margin: 0 0 10px; }
+.progress { height: 14px; border: 2px solid #f3eedd; margin-bottom: 14px; }
+#progress-bar { height: 100%; width: 0; background: var(--green); transition: width 0.4s; }
+#missions, #levelup { margin: 0; padding-left: 0; list-style: none; font-size: 13px; display: flex; flex-direction: column; gap: 8px; }
+#missions li.done, #levelup li.done { color: #8fe39b; }
+.checker .hint { display: block; color: #ffcf7a; font-size: 12px; margin-top: 2px; }
+.note { font-size: 12px; color: #b9b3a2; margin: 14px 0 0; }
+.error-banner { background: var(--red); color: #fff; padding: 10px; font-size: 13px; margin: 0 0 12px; }
+.hidden { display: none; }
+.credit { font-size: 13px; color: var(--muted); margin: 10px 0 0; }

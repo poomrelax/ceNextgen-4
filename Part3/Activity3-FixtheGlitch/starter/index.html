@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fix the Glitched Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <main id="card" class="card glitch">
+      <h1 id="title">ERR0R: TR4INER N0T F0UND</h1>
+
+      <div class="profile">
+        <img id="avatar" src="glitch.svg" alt="???">
+        <div>
+          <p class="label">Trainer</p>
+          <p id="trainer-name" class="name">???</p>
+          <p id="motto" class="motto">l0ad1ng m0tt0...</p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><span>HP</span><b id="hp">??</b></div>
+        <div class="stat"><span>ATK</span><b id="atk">??</b></div>
+        <div class="stat"><span>SPD</span><b id="spd">??</b></div>
+      </div>
+
+      <h2>Badges</h2>
+      <div class="badges">
+        <span class="badge">⚡</span>
+        <span class="badge">💧</span>
+        <span class="badge">🔥</span>
+        <span class="badge">🌿</span>
+        <span class="badge">⭐</span>
+      </div>
+
+      <h2>My team</h2>
+      <ul id="team">
+        <!-- <li>???</li> -->
+      </ul>
+
+      <p class="link-row"><a id="link" href="#">br0ken l1nk</a></p>
+      <button id="night-btn">🌙 Night mode</button>
+    </main>
+
+    <aside id="checker" class="checker">
+      <h2>System check</h2>
+      <p class="meter">Glitch: <b id="glitch-percent">100%</b></p>
+      <div class="progress"><div id="progress-bar"></div></div>
+      <p id="error-banner" class="error-banner hidden"></p>
+      <ol id="missions"></ol>
+      <p id="bonus" class="bonus"></p>
+    </aside>
+  </div>
+
+  <script>
+    window.__errors = [];
+    window.addEventListener("error", (e) => window.__errors.push(e.message));
+  </script>
+  <script src="script.js"></script>
+  <script src="checker.js"></script>
+</body>
+</html>

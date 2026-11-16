@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Arcade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Event Arcade</h1>
+    <p class="sub">5 machines are switched off. Each one wakes up when you give it the right <b>event listener</b>.</p>
+  </header>
+
+  <div class="layout">
+    <main class="machines">
+
+      <!-- Machine 1 -->
+      <section class="machine">
+        <p class="event-tag">1 · click</p>
+        <h2>Power Switch</h2>
+        <p class="how">Click the button and the lamp turns on. Click again and it turns off.</p>
+        <div class="stage">
+          <button id="power-btn" class="pixel-btn">Power</button>
+          <div id="lamp" class="lamp"></div>
+        </div>
+      </section>
+
+      <!-- Machine 2 -->
+      <section class="machine">
+        <p class="event-tag">2 · mouseenter / mouseleave</p>
+        <h2>Shy Ghost</h2>
+        <p class="how">Hover: move the mouse onto the ghost and it hides. Move away and it comes back.</p>
+        <div class="stage">
+          <div id="ghost" class="ghost">👻</div>
+        </div>
+      </section>
+
+      <!-- Machine 3 -->
+      <section class="machine">
+        <p class="event-tag">3 · input</p>
+        <h2>Name Tag</h2>
+        <p class="how">Type a name: the tag updates on every key.</p>
+        <div class="stage stage-col">
+          <input id="name-input" maxlength="12" placeholder="Type your name" autocomplete="off">
+          <div class="nametag">
+            <p class="nametag-head">HELLO my name is</p>
+            <p id="name-preview" class="nametag-name"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Machine 4 -->
+      <section class="machine">
+        <p class="event-tag">4 · keydown / keyup</p>
+        <h2>Dino Jump</h2>
+        <p class="how">Press any key: its name shows below. Space or ↑ makes the dino jump; letting go makes it land.</p>
+        <div class="stage stage-col">
+          <div class="track">
+            <div id="dino" class="dino">🦖</div>
+            <div class="cactus">🌵</div>
+          </div>
+          <p class="msg">Last key: <b id="last-key">–</b></p>
+        </div>
+      </section>
+
+      <!-- Machine 5 -->
+      <section class="machine">
+        <p class="event-tag">5 · click + input.value</p>
+        <h2>Secret Door</h2>
+        <p class="how">The password is <b>nextgen</b>. Type it and click Open: the door opens. Wrong password: a warning.</p>
+        <div class="stage stage-col">
+          <div class="door-form">
+            <input id="door-input" placeholder="Password" autocomplete="off">
+            <button id="door-btn" class="pixel-btn">Open</button>
+          </div>
+          <div id="door" class="door">🚪</div>
+          <p id="door-msg" class="msg"></p>
+        </div>
+      </section>
+
+      <!-- Bonus -->
+      <section class="machine bonus-machine">
+        <p class="event-tag">Bonus · mousemove</p>
+        <h2>Radar</h2>
+        <p class="how">Finished early? Move the mouse over the radar: show the x, y position and move the dot there.</p>
+        <div class="stage stage-col">
+          <div id="radar" class="radar"><div id="blip" class="blip"></div></div>
+          <p id="coords" class="msg">x: 0, y: 0</p>
+        </div>
+      </section>
+    </main>
+
+    <aside class="checker">
+      <h2>Machine check</h2>
+      <p class="meter">Online: <b id="online">0 / 5</b></p>
+      <div class="progress"><div id="progress-bar"></div></div>
+      <p id="error-banner" class="error-banner hidden"></p>
+      <ol id="missions"></ol>
+      <p id="bonus" class="bonus"></p>
+      <p class="note">The check runs again every time you save and refresh (F5).</p>
+    </aside>
+  </div>
+
+  <script>
+    window.__errors = [];
+    window.addEventListener("error", (e) => window.__errors.push(e.message));
+  </script>
+  <script src="script.js"></script>
+  <script src="checker.js"></script>
+</body>
+</html>

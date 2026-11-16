@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Frieren: Beyond Journey's End",
+    "image": "https://cdn.myanimelist.net/images/anime/1015/138006.jpg",
+    "type": "TV",
+    "episodes": 28,
+    "year": 2023,
+    "studio": "Madhouse"
+  },
+  {
+    "title": "Spy x Family",
+    "image": "https://cdn.myanimelist.net/images/anime/1441/122795.jpg",
+    "type": "TV",
+    "episodes": 12,
+    "year": 2022,
+    "studio": "Wit Studio, CloverWorks"
+  },
+  {
+    "title": "Demon Slayer",
+    "image": "https://cdn.myanimelist.net/images/anime/1286/99889.jpg",
+    "type": "TV",
+    "episodes": 26,
+    "year": 2019,
+    "studio": "ufotable"
+  },
+  {
+    "title": "Jujutsu Kaisen",
+    "image": "https://cdn.myanimelist.net/images/anime/1171/109222.jpg",
+    "type": "TV",
+    "episodes": 24,
+    "year": 2020,
+    "studio": "MAPPA"
+  },
+  {
+    "title": "Bocchi the Rock!",
+    "image": "https://cdn.myanimelist.net/images/anime/1448/127956.jpg",
+    "type": "TV",
+    "episodes": 12,
+    "year": 2022,
+    "studio": "CloverWorks"
+  },
+  {
+    "title": "Haikyu!!",
+    "image": "https://cdn.myanimelist.net/images/anime/7/76014.jpg",
+    "type": "TV",
+    "episodes": 25,
+    "year": 2014,
+    "studio": "Production I.G"
+  },
+  {
+    "title": "Attack on Titan",
+    "image": "https://cdn.myanimelist.net/images/anime/10/47347.jpg",
+    "type": "TV",
+    "episodes": 25,
+    "year": 2013,
+    "studio": "Wit Studio"
+  },
+  {
+    "title": "Your Name.",
+    "image": "https://cdn.myanimelist.net/images/anime/5/87048.jpg",
+    "type": "Movie",
+    "episodes": 1,
+    "year": 2016,
+    "studio": "CoMix Wave Films"
+  }
+]

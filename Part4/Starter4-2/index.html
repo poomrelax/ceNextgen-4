@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4-2 · Event playground</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="./part4.css">
+</head>
+<body>
+  <main>
+    <h1>4-2 · Event playground</h1>
+    <p class="lead">Every thing you do here is an event. The big text shows which one just happened.</p>
+
+    <div class="panel">
+      <p class="label">Last event</p>
+      <p id="event-name" class="big">–</p>
+    </div>
+
+    <div class="panel">
+      <h2 style="margin-top:0">Mouse: click · dblclick · mouseenter · mouseleave</h2>
+      <div id="pad" class="pad">🦖</div>
+    </div>
+
+    <div class="panel">
+      <h2 style="margin-top:0">Typing: input</h2>
+      <input id="text" placeholder="Type something" autocomplete="off">
+      <p id="preview" class="big"></p>
+    </div>
+
+    <div class="panel">
+      <h2 style="margin-top:0">Keyboard: keydown</h2>
+      <p class="muted" style="margin:0">Click on an empty part of the page, then press any key.</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5-2 · JSON file → table</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="./part5.css">
+</head>
+<body>
+  <main class="wide">
+    <h1>Anime List</h1>
+    <p id="status" class="status">Loading anime.json…</p>
+
+    <div class="table-wrap">
+      <table class="anime-table">
+        <thead>
+          <tr>
+            <th>Cover</th>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Episodes</th>
+            <th>Year</th>
+            <th>Studio</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <p class="muted" style="font-size:14px">Cover images: MyAnimeList</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

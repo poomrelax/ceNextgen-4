@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <p class="kicker">Part 5 · JSON file → HTML table</p>
+    <h1>NextGen4's Anime List</h1>
+    <p class="sub" id="count">? anime</p>
+  </header>
+
+  <div class="layout">
+    <main>
+      <div class="tabs">
+        <button id="tab-all" class="tab">All</button>
+        <button id="tab-watching" class="tab">Watching</button>
+        <button id="tab-completed" class="tab">Completed</button>
+        <button id="tab-planned" class="tab">Plan to Watch</button>
+      </div>
+
+      <div class="table-wrap">
+        <table class="list-table">
+          <thead>
+            <tr>
+              <th>Cover</th>
+              <th>Title</th>
+              <th>Type</th>
+              <th>Progress</th>
+              <th>Score</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="list-body"></tbody>
+        </table>
+      </div>
+      <p class="credit">Cover images: MyAnimeList</p>
+    </main>
+
+    <aside class="checker">
+      <h2>List check</h2>
+      <p class="meter">List: <b id="score">0 / 6</b></p>
+      <div class="progress"><div id="progress-bar"></div></div>
+      <p id="error-banner" class="error-banner hidden"></p>
+      <ol id="missions"></ol>
+      <h2 class="levelup-title">Bonus (if you finish early)</h2>
+      <ol id="levelup"></ol>
+      <p class="note">The check runs again every time you save (Live Server refreshes the page for you).</p>
+    </aside>
+  </div>
+
+  <!-- Catch errors in script.js so the checker can tell you about them -->
+  <script>
+    window.__errors = [];
+    window.addEventListener("error", (e) => window.__errors.push(e.message));
+    window.addEventListener("unhandledrejection", (e) => window.__errors.push(e.reason && e.reason.message ? e.reason.message : String(e.reason)));
+  </script>
+  <script src="script.js"></script>
+  <script src="checker.js"></script>
+</body>
+</html>
