@@ -154,12 +154,15 @@ body{
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px 3px #7c3aed;
+    margin-top: 60px;
     /* justify-content: space-between; */
 
     & #profileImage{
         border-radius: 10px;
         box-shadow: 0 0 8px 2px #fdff9e;
         transform: rotateX(0);
+        width: 300px;
+        height: 400px;
         /* animation: filpImage 2s ease-in-out infinite alternate-reverse; */
     }
 }
@@ -175,7 +178,7 @@ body{
 
     & .contact{
         display: flex;
-        gap: 15px;
+        gap: 25px;
         align-items: center;
         margin-top: 20px;
         

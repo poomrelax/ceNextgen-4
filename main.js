@@ -9,8 +9,16 @@ const fullname = document.getElementById("fullname")
 const nickname = document.getElementById("nickname")
 const age = document.getElementById("age")
 
+const viw = new Audio("./audio/magic-fairy.mp3")
+
 const path = location.href.split('/').at(-1) || "index.html"
 let page = ""
+
+function playsoundBoom(){
+    const boomSound = new Audio("./audio/vine-boom.mp3")
+    boomSound.play()
+}
+
 
 
 
@@ -55,36 +63,48 @@ const profileData = fetch("./data/profile.json").then(r => r.json()).then(res =>
     nickname.textContent = res.nickname
     age.textContent = res.age
 
-// array
-const contactIcon = ['https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Tiktok_icon.svg/3840px-Tiktok_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail', res.tik, 'https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1280px-Facebook_Logo_%282019%29.png?utm_source=th.wikipedia.org&utm_campaign=index&utm_content=thumbnail', res.facebook, 'https://static.vecteezy.com/system/resources/thumbnails/023/741/066/small/discord-logo-icon-social-media-icon-free-png.png', res.discord]
+    // array
+    const contactIcon = ['https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Tiktok_icon.svg/3840px-Tiktok_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail', res.tik, 'https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1280px-Facebook_Logo_%282019%29.png?utm_source=th.wikipedia.org&utm_campaign=index&utm_content=thumbnail', res.facebook, 'https://static.vecteezy.com/system/resources/thumbnails/023/741/066/small/discord-logo-icon-social-media-icon-free-png.png', res.discord]
 
-for(let i = 0; i < contactIcon.length; i=i+2){
-    // console.log(i)
-    const a = document.createElement("a")
-    const image = document.createElement("img")
-    image.src = contactIcon[i]
+    for(let i = 0; i < contactIcon.length; i=i+2){
+        // console.log(i)
+        const a = document.createElement("a")
+        const image = document.createElement("img")
+        image.src = contactIcon[i]
 
-    // image strle chang 1
-    image.style.width = "30px"
-    // image strle chang 2
-    image.style.cursor = 'pointer'
-     
-    a.append(image)
-    a.href = contactIcon[i+1]
-    a.target = '_blank'
+        // image strle chang 1
+        image.style.width = "30px"
+        // image strle chang 2
+        image.style.cursor = 'pointer'
+        
+        a.append(image)
+        a.href = contactIcon[i+1]
+        a.target = '_blank'
 
-    contact.append(a)
-}
+        contact.append(a)
+    }
+    // even 1
+    profileImage.addEventListener('mouseover', () => {
+        profileImage.src = './images/joke.png'
+        profileImage.height = ''
+        playsoundBoom()
+    })
+    profileImage.addEventListener('mouseleave', () => {
+        profileImage.src = './images/profile.webp'
+    })
 })
 
+viw.play()
 
-// even 1
+
+// even 2
 contentBtn.addEventListener('click', () => {
     window.location.href = 'profile.html'
 })
 
-// even2
+// even3
 document.addEventListener('mousemove', (e) => {
     mousce.style.top = (e.screenY - 125) + 'px'
     mousce.style.left = (e.screenX - 6) + 'px'
 })
+
