@@ -19,7 +19,7 @@ function playsoundBoom(){
     boomSound.play()
 }
 
-
+viw.play()
 
 
 function setPageLocal(){
@@ -45,7 +45,7 @@ setPageLocal()
 container.insertAdjacentHTML("afterbegin", `
         <nav>
             <div class="headerText" onclick="window.location.href = '/'" style="cursor: pointer">
-                <img src="/images/poomrelaxIconPNG.png" alt="logo">
+                <img src="./images/poomrelaxIconPNG.png" alt="logo">
                 <p class="">Portfolio Website Relax</p>
             </div>
             <div class="menu">
@@ -94,7 +94,6 @@ const profileData = fetch("./data/profile.json").then(r => r.json()).then(res =>
     })
 })
 
-viw.play()
 
 
 // even 2
@@ -107,4 +106,3 @@ document.addEventListener('mousemove', (e) => {
     mousce.style.top = (e.screenY - 125) + 'px'
     mousce.style.left = (e.screenX - 6) + 'px'
 })
-
