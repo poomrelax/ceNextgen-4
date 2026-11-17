@@ -37,7 +37,7 @@ setPageLocal()
 container.insertAdjacentHTML("afterbegin", `
         <nav>
             <div class="headerText" onclick="window.location.href = '/'" style="cursor: pointer">
-                <img src="../images/poomrelaxIconPNG.png" alt="logo">
+                <img src="./images/poomrelaxIconPNG.png" alt="logo">
                 <p class="">Portfolio Website Relax</p>
             </div>
             <div class="menu">
