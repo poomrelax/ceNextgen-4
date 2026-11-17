@@ -1,3 +1,7 @@
+// ผมcommnt ส่วนที่เป็นเเกณฑ์การให้คะแนน เช่น evenvอย่างน้อย2จุด ผมทำการcommentบอกไส้ให้แล้ว พี่สามารถ ctrl + F แล้วเขียน even, array, chang style, json ได้เลย
+
+
+
 const menu = document.querySelectorAll(".menu p")
 const content = document.querySelector(".content")
 const contentBtn = document.getElementById('btnHome')
@@ -57,13 +61,14 @@ container.insertAdjacentHTML("afterbegin", `
 `)
 
 
+// json
 const profileData = fetch("./data/profile.json").then(r => r.json()).then(res => {
     profileImage.src = res.profile
     fullname.textContent = res.fullName
     nickname.textContent = res.nickname
     age.textContent = res.age
 
-    // array
+    // array 1
     const contactIcon = ['https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Tiktok_icon.svg/3840px-Tiktok_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail', res.tik, 'https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1280px-Facebook_Logo_%282019%29.png?utm_source=th.wikipedia.org&utm_campaign=index&utm_content=thumbnail', res.facebook, 'https://static.vecteezy.com/system/resources/thumbnails/023/741/066/small/discord-logo-icon-social-media-icon-free-png.png', res.discord]
 
     for(let i = 0; i < contactIcon.length; i=i+2){
